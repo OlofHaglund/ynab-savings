@@ -10,7 +10,7 @@ def contains_string(value):
 
 def short_date(value):
     if "goal_target_month" not in value or value['goal_target_month'] is None:
-        return False # Categories doesn't not have a target date set.
+        return True # Categories doesn't not have a target date set.
     
     target = datetime.datetime.strptime(value['goal_target_month'], '%Y-%m-%d').date()
     now = datetime.date.today()
